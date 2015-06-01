@@ -1,6 +1,3 @@
-// This file in the main entry point for defining grunt tasks and using grunt plugins.
-// Click here to learn more. http://go.microsoft.com/fwlink/?LinkID=513275&clcid=0x409
-
 'use strict';
 
 module.exports = function(grunt) {
@@ -33,7 +30,28 @@ module.exports = function(grunt) {
                 // files: {
                 //     '<%= dev %>/css/someFileNamed.css': '<%= dev %>/scss/someFileNamed.scss'
                 // }
-          }
+          },
+          css: {
+            options: {
+              paths: ['<%= dev %>/css']
+            },
+            files: [
+                    {
+                      expand: true,     // Enable dynamic expansion.
+                      cwd: '<%= dev %>/css/',      // Src matches are relative to this path.
+                      src: ['**/*.less', '!**/carousel.less','!**/social.less', '!**/variables.less', '!**/fonts.less', '!**/svn-icon.less'], // Actual pattern(s) to match.
+                      dest: '<%= dev %>/css/',   // Destination path prefix.
+                      ext: '.css',   // Dest filepaths will have this extension.
+                      extDot: 'first'   // Extensions in filenames begin after the first dot
+                    },
+                  ],
+
+                // [{src: '<%= dev %>/**/someFileNamed.scss', dest: '<%= dev %>/scss/someFileNamed.css'}]
+                
+                // files: {
+                //     '<%= dev %>/css/someFileNamed.css': '<%= dev %>/scss/someFileNamed.scss'
+                // }
+          } 
         },
 
         jshint: {
@@ -56,6 +74,15 @@ module.exports = function(grunt) {
                     cwd: '<%= dev %>/css/sections/',
                     src: ['*.css', '!template-dashboard.css'],
                     dest: '<%= dev %>/css/sections/',
+                    ext: '.css'
+                }]
+            },
+            target2: {
+                files: [{
+                    expand: true,
+                    cwd: '<%= dev %>/css/',
+                    src: ['*.css', '!template-dashboard.css', '!template-dashboard.css', '!fancybox.css', '!flexslider.css', '!magicsuggest.css', '!parsely.css', '!svn-admin-scripts.css', '!svn-social.css' ],
+                    dest: '<%= dev %>/css/',
                     ext: '.css'
                 }]
             }
@@ -85,7 +112,7 @@ module.exports = function(grunt) {
     });
 
 
-    grunt.registerTask('compile-less', ['less:sections', 'cssmin']);    
+    grunt.registerTask('compile-less', ['less:sections', 'less:css', 'cssmin']);    
     grunt.registerTask('default', [ 'watch']);
     grunt.registerTask('validate-js', ['jshint']);
 
