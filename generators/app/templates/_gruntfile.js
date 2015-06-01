@@ -18,7 +18,7 @@ module.exports = function(grunt) {
                     {
                       expand: true,     // Enable dynamic expansion.
                       cwd: '<%= dev %>/css/sections/',      // Src matches are relative to this path.
-                      src: ['**/*.less', '!**/template-contact-us.less'], // Actual pattern(s) to match.
+                      src: ['**/*.less', '!**/template-contact-us.less','!**/template-vacation-ideas.less','!**/carousel.less','!**/social.less','!**/ie.less','!**/firefox.less' ], // Actual pattern(s) to match.
                       dest: '<%= dev %>/css/sections/',   // Destination path prefix.
                       ext: '.css',   // Dest filepaths will have this extension.
                       extDot: 'first'   // Extensions in filenames begin after the first dot
@@ -39,7 +39,7 @@ module.exports = function(grunt) {
                     {
                       expand: true,     // Enable dynamic expansion.
                       cwd: '<%= dev %>/css/',      // Src matches are relative to this path.
-                      src: ['**/*.less', '!**/carousel.less','!**/social.less', '!**/variables.less', '!**/fonts.less', '!**/svn-icon.less'], // Actual pattern(s) to match.
+                      src: ['**/*.less', '!**/carousel.less','!**/social.less', '!**/variables.less', '!**/fonts.less', '!**/svn-icon.less','!**/template-vacation-ideas.less','!**/carousel.less','!**/social.less','!**/ie.less','!**/firefox.less' ], // Actual pattern(s) to match.
                       dest: '<%= dev %>/css/',   // Destination path prefix.
                       ext: '.css',   // Dest filepaths will have this extension.
                       extDot: 'first'   // Extensions in filenames begin after the first dot
