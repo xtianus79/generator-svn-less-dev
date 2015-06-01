@@ -1,5 +1,25 @@
 {
-  "name": "package",
-  "version": "0.0.0",
-  "dependencies": {}
+  "name": "SVN-Less-Dev",
+  "description": "The most amazing Foundation template for Visual Studio Vnext",
+  "version": "0.0.1",
+  "repository": "xtianus79/generator-aspnet",
+  "homepage": "https://github.com/xtianus79/generator-aspnet",
+  "author": {
+    "name": "Christian",
+    "email": "xtianus@live.com"
+  },
+  "devDependencies": {
+    "load-grunt-tasks": "~3.1.0",
+    "grunt-bower-task": "0.4.0",
+    "grunt-contrib-less": "~1.0.1",
+    "grunt": "~0.4.5",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-contrib-cssmin": "~0.12.2",
+    "grunt-contrib-uglify": "~0.8.0",
+    "grunt-contrib-concat": "~0.5.1",
+    "grunt-contrib-jshint": "~0.11.2",
+    "grunt-usemin": "~3.0.0",
+    "grunt-contrib-imagemin": "0.9.4",
+    "grunt-newer": "~1.1.0"
+  }
 }
